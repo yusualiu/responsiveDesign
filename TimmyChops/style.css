@@ -1,0 +1,271 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+body{
+  background-color:#dae5e800;
+  font-family: "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+  color: #f69f2f;
+}
+/* #main{
+  position: relative;
+} */
+#header{
+  position: fixed;
+  top: 0;
+  min-height: 75px;
+  padding: 0px 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #fbfcfc;
+  width:100%;
+  opacity: 0.9;
+}
+
+.logo{
+  width: 60vw; 
+}
+.logo > img {
+  width: 5vw; 
+  height: 100%;
+  max-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-left: 20px;
+}
+
+nav > ul {
+  width: 35vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+li{
+  list-style: none;
+}
+a{
+  color: #000;
+  text-decoration: none;
+}
+a:hover{
+  font-weight: bolder;
+  /* transition: font-weight 1s; */
+}
+.container {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}
+#leads{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 200px;
+  margin-top: 50px;
+}
+#leads > h2{
+  margin-bottom: 10px;
+  word-wrap: break-word;
+}
+#leads input[type="email"] {
+  max-width: 275px;
+  width: 100%;
+  padding: 5px;
+}
+#leads input[type="submit"] {
+  max-width: 150px;
+  width: 100%;
+  height: 30px;
+  margin: 15px 0;
+  border: 0;
+  background-color: #f1c40f;
+}
+#submit {
+  padding: 0 20px;  
+  font-size: 1em;
+  font-weight: 900;
+  text-transform: uppercase;  
+  border-radius: 2px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.grid{
+  display: flex;
+}
+#service , #service2 {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: calc(100% / 3);
+  margin: 10px;
+  
+  
+}
+.product > img {
+  width: 25vw; 
+  height: 100%;
+  max-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 50%;
+  
+}
+.product > .level {
+  background-color: #ddd;
+  color: black;
+  padding: 15px 0;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.product > h2 {
+  margin-top: 15px;
+}
+
+.product > button {
+  border: 0;
+  margin: 15px 0;
+  color:white;
+  background-color:black;;
+  font-weight: 400;
+  padding: 0 20px;
+  height: 40px;
+  font-size: 1em;  
+  text-transform: uppercase;  
+  border-radius: 2px;  
+  cursor: pointer;
+}
+.product > button:hover {
+  background-color: #be323c;
+  
+}
+
+#about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0px 80px 0px;
+  text-transform: uppercase;
+  font-size: 30px;
+  letter-spacing: 2px;
+}
+
+#contact{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0px 80px 0px;
+  text-transform: uppercase;
+  font-size: 30px;
+  letter-spacing: 2px;
+}
+
+footer {
+  margin-top: 30px;
+  background-color: #0f0d52;
+  padding: 20px;
+  
+}
+footer > ul {
+  display: flex;
+  justify-content: flex-end;
+}
+footer > ul > li {
+  padding: 0 10px;
+  
+}
+footer a{
+  color:wheat;
+}
+footer > small {
+  margin-top: 5px;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.9em;
+  color:wheat;
+}
+
+
+
+@media (max-width: 800px){
+.product {
+  max-width: 300px;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+#service,#service2 {
+  flex-direction: column;
+}
+}
+
+@media (max-width: 650px){
+
+.logo {
+    margin-top: 15px;
+    width: 60vw;
+    position: relative;
+}
+  nav {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 50px;
+}
+nav > ul {
+  flex-direction: column;
+}
+nav li {
+  padding-bottom: 5px;
+}
+#leads{
+  margin-top: 120px;
+}
+#personal,#business{
+  margin-top: 0;
+}
+}
+
+
+
+@media (max-width: 600px){
+  header {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 550px){
+  #personal .icon, #business .icon{
+    display: none;
+}
+#personal .description, #business .description {
+  width: 100%;
+  text-align: center;
+  padding: 0;
+  height: 150px;
+}
+}
+
+

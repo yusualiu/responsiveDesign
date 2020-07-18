@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Aliu: Survey Form</title>
+</head>
+
+<body>
+  <main id="main">
+  <header>
+    <h1 id="title"> COVID IMPACT SURVEY</h1>
+    <p id="description">Thank you for taking the time to help us fight against covid 19</p>
+  </header>
+  <section>
+    <form id="survey-form">
+      <label id="name-label" for="name">Name</label>
+      <input type="text" id="name" placeholder="Enter your name" required><br>
+
+      <label id="email-label" for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email" required><br>
+
+      <label id="number-label" for="number">Age <small>(optional)</small></label>
+      <input type="number" id="number" placeholder="Enter your age" min="10" max="99"><br>
+
+      
+      <label for="occupation">Which option best describe your occupation</label>
+      <select name="occupation" id="dropdown" required>
+        <option selected disabled>
+          Select current occupation
+        </option>
+        <option value="student">Student</option>
+        <option value="job">Full Time Job</option>
+        <option value="learner">Full Time Learner</option>
+        <option value="trader">Full Time Trader</option>
+        <option value="essential">Full Time Essential Worker</option>
+        <option value="preferNo">Prefer not to say</option>
+        <option value="other">Other</option>        
+      </select>
+      <p>In the past month, how often did you talk with any of your neighbours?</p>
+      <fieldset>
+        <legend>Interaction:</legend>
+        <label for="interact">Basically every day</label>
+        <input type="radio" name="interact" value="everyday" checked>
+          
+        <label for="interact"> A few times a week</label>
+        <input type="radio" name="interact" value="week" >
+         
+        <label for="interact"> A few times a month</label><input type="radio" name="interact" value="month" >
+
+        <label for="interact">Once a month</label><input type="radio" name="interact" value="oncemonth" >
+        <label for="interact">Not at all</label><input type="radio" name="interact" value="oncemonth" >
+        
+
+      </fieldset>
+      
+      <p>In the past month, did you spend any time volunteering for any organization or association, or not? </p>
+      <fieldset>
+        <legend>Volunteering:</legend>
+        <label for="volunteer">Yes</label>
+        <input type="radio" name="volunteer" value="yes" checked>
+          
+        <label for="volunteer">No</label>
+        <input type="radio" name="volunteer" value="no" > 
+      </fieldset>
+      
+
+      <p>Would you say your health in general is excellent, very good, good, fair, or poor?</p>
+      <fieldset>
+        <legend>Health:</legend>
+        <label for="health">Excellent</label>
+        <input type="radio" name="health" value="excellent" checked>
+          
+        <label for="health">Very good</label>
+        <input type="radio" name="health" value="verygood" >
+        
+        <label for="health">Good</label>
+        <input type="radio" name="health" value="good" >
+
+        <label for="health">Fair</label>
+        <input type="radio" name="health" value="fair" >
+        <label for="health">Poor</label>
+        <input type="radio" name="health" value="poor" >
+      </fieldset>
+
+      <p>Have you experienced any of the following symptoms in the past 7 days, or not?</p>
+      <ol>
+        <li>Fever</li>
+        <li>Chills</li>
+        <li>Runny or stuffy nose</li>
+        <li>Chest congestion</li>
+        <li>Skin rash</li>
+        <li>Cough</li>
+        <li>Sore throat</li>
+        <li>Sneezing</li>
+        <li>Muscle or body aches</li>
+        <li>Headaches</li>
+        <li>Fatigue or tiredness</li>
+        <li>Shortness of breath</li>
+        <li>Abdominal discomfort</li>
+        <li>Nausea or vomiting</li>
+        <li>Diarrhea</li>
+        <li>Changed or lost sense of taste or smell</li>
+        <li>Loss of appetite</li>
+      </ol>
+      <fieldset>
+        <legend>Symptoms:</legend>
+        <label for="symptoms">Yes</label>
+        <input type="radio" name="symptoms" value="yes" checked>
+          
+        <label for="symptoms">No</label>
+        <input type="radio" name="symptoms" value="no" > 
+      </fieldset>
+     
+     <p>Which of the following measures, if any, are you taking in response to the coronavirus? </p>
+     <em>Please select all that apply</em>
+     <fieldset>
+      <legend>Measures:</legend>
+      <label for="appointment">Canceled a doctor appointment</label>
+        <input id="appointment" type="checkbox" name="measures" value="appointment" >        
+      <label for="mask">Worn a face mask</label>
+        <input id="mask" type="checkbox" name="measures" value="mask" >
+           
+      <label for="hospital">Visited a doctor or hospital</label>
+        <input id="hospital" type="checkbox" name="measures" value="hospital" >            
+      <label for="activities">Canceled or postponed work activities</label>
+        <input id="activities" type="checkbox" name="measures" value="activities" >
+
+        <label for="school">Canceled or postponed school activities</label>
+        <input id="school" type="checkbox" name="measures" value="school" >
+
+        <label for="remote">Worked from home</label>
+        <input id="remote" type="checkbox" name="measures" value="remote" >
+
+        <label for="food">Stockpiled food or water</label>
+        <input id="food" type="checkbox" name="measures" value="food" >
+
+        <label for="crowd">Avoided public or crowded places</label>
+        <input id="crowd" type="checkbox" name="measures" value="crowd" >
+
+        <label for="contact">Avoided contact with high-risk people</label>
+        <input id="contact" type="checkbox" name="measures" value="contact" >
+
+        <label for="hands">Washed or sanitized hands</label>
+        <input id="hands" type="checkbox" name="measures" value="hands" >       
+        
+     </fieldset>
+     <label for="pay">In the past 7 days, did you do any work for pay at a job or business? </label>
+     <select name="pay" id="pay">
+       <option selected disabled>
+         Select current role
+       </option>
+       <option value="employee">
+        Yes, I worked for someone else for wages, salary, piece rate, commission, tips, or payments "in
+        kind," for example, food or lodging received as payment for work performed 
+       </option>
+       <option value="enterpreneur">
+        Yes, I worked as self-employed in my own business, professional practice, or farm 
+       </option>
+       <option value="probono">
+        No, I did not work for pay last week.
+       </option>
+             
+     </select>
+
+     <p>
+      Tell us a little about your household. <u>Including yourself</u>, how many persons currently live in your
+      household at least 50 percent of the time? Please include any children as well as adults.      
+     </p>
+     <select name="household" id="household">
+       <option selected disabled>
+         Select current household
+       </option>
+       <option value="single">
+        One person, I live by myself
+       </option>
+       <option value="two">
+        Two persons
+       </option>
+       <option value="three">
+        Three persons
+       </option>
+       <option value="four">
+        Four persons
+       </option>
+       <option value="five">
+        Five persons
+       </option>
+       <option value="six">
+        Six or more persons
+       </option>
+             
+     </select><br>
+     <p>What is your total HOUSEHOLD income in 2019… <small>(optional)</small></p>
+     <fieldset>
+      
+      <legend>Income:</legend>
+      <label for="income">Less than #50,000</label>
+      <input type="radio" name="income" value="verylow">
+      <label for="income">#51,000 to #100,000</label>
+      <input type="radio" name="income" value="low" >
+      <label for="income">#101,000 to #150,000</label>
+      <input type="radio" name="income" value="medium" >
+      <label for="income">#151,000 to #200,000</label>
+      <input type="radio" name="income" value="moderate" >
+      <label for="income">#201,000 to #300,000</label>
+      <input type="radio" name="income" value="high" >
+      <label for="income">#301,000 or more</label>
+      <input type="radio" name="income" value="veryhigh" >
+
+      
+    </fieldset>
+       
+        <p>Any comments or suggestions?</p>
+        <textarea name="comment" id="comments" placeholder="Enter your comments here ..."></textarea>
+
+        <button type="submit" id="submit">Submit</button>
+    </form>
+    
+  </section>
+  <footer>
+    <small>Reference: <a href="https://www.covid-impact.org/about-the-survey-questionnaire">Covid Impact</a>  </small>
+  </footer>
+</main>
+</body>
+</html>

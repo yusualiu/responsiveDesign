@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>PHP: Documentation</title>
+</head>
+<body>
+  <nav id="navbar">
+    <header>PHP OOP Documentation</header>
+    <ul>
+    <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+    <li>
+    <a class="nav-link" href="#What_you_should_already_know">What you should already know</a>
+    </li>
+    <li>
+    <a class="nav-link" href="#JavaScript_and_Php">JavaScript and Php</a>
+    </li>
+    <li><a class="nav-link" href="#The_basics">The Basics</a></li>
+    <li><a class="nav-link" href="#The_key_word_new">The key word new</a></li>
+    <li>
+    <a class="nav-link" href="#Properties_and_methods">Properties and methods</a>
+    </li>
+    <li><a class="nav-link" href="#Inheritance">Inheritance</a></li>
+    <li><a class="nav-link" href="#Namespaces">Namespaces</a></li>
+    <li><a class="nav-link" href="#Autoloading_Classes">Autoloading Classes</a></li>
+    <li><a class="nav-link" href="#Constructors">Constructors </a></li>
+    <li>
+    <a class="nav-link" href="#Visibility">Visibility</a>
+    </li>
+    <li><a class="nav-link" href="#Object_inheritance">Object Inheritance</a></li>
+    
+    <li><a class="nav-link" href="#Reference">Reference</a></li>
+    </ul>
+  </nav>
+  <main id="main-doc">
+    <section class="main-section" id="Introduction">
+      <header>Introduction</header>
+        <article>
+         
+          <p>
+            OOP stands for Object-Oriented Programming.
+            Procedural programming is about writing procedures or functions that perform operations on the data, while object-oriented programming is about creating objects that contain both data and functions.
+            Object-oriented programming has several advantages over procedural programming:
+          </p>
+          
+          <ul>
+            <li>OOP is faster and easier to execute</li>
+            <li>OOP provides a clear structure for the programs</li>
+            <li>OOP helps to keep the PHP code DRY "Don't Repeat Yourself", and makes the code easier to maintain, modify and debug</li>
+            <li>OOP makes it possible to create full reusable applications with less code and shorter development time</li>
+           
+            
+          </ul>
+      </article>
+    </section>
+    <section class="main-section" id="What_you_should_already_know">
+    <header>What you should already know</header>
+    <article>
+    <p>This guide assumes you have the following basic background:</p>
+    <ul>
+    <li>
+    A general understanding of the Internet and the World Wide Web (WWW).
+    </li>
+    <li>Good working knowledge of HyperText Markup Language (HTML) and Cascading Style Sheet(CSS)</li>
+    <li>
+    Some programming experience. If you are new to programming, try checking out PHP introduction on php manual.
+    </li>
+    </ul>
+    </article>
+    </section>
+    <section class="main-section" id="JavaScript_and_Php">
+    <header>JavaScript and PHP</header>
+    <article>
+    <p>
+      PHP is a server-side scripting language while JavaScript is a client-side scripting language.
+      PHP stands for "Hypertext Preprocessor", is a programming language embedded in HTML that does all sort of things like build custom web content, send and receive cookies, evaluate form data sent from a browser, etc. It is integrated with number of popular databases like Postgre SQL, Oracle, Sybase, SQL, and MySQL. PHP also supports major protocols like IMAP, POP3 and LDAP.JavaScript is a programming language that adds interactivity to your website. This happens in games, in the behavior of responses when buttons are pressed or with data entry on forms; with dynamic styling; with animation, etc. 
+
+    </p>
+    <!-- https://www.guru99.com/ -->
+    <!-- https://developer.mozilla.org/ -->
+    </article>
+    </section>
+    <section class="main-section" id="The_basics">
+    <header>The Basics</header>
+    <article>
+      <p>Basic class definitions begin with the keyword class, followed by a <strong>class name</strong>, followed by a pair of curly braces which enclose the definitions of the <strong>properties</strong> and <strong>methods</strong>  belonging to the class.</p>
+      The class name can be any valid label, provided it is not a PHP reserved word.
+      <code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">ClassNameHere<br></span><span style="color: #007700">{<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;property&nbsp;declaration<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">public&nbsp;</span><span style="color: #0000BB">$anyVariable&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'a&nbsp;property&nbsp;value'</span><span style="color: #007700">;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;method&nbsp;declaration<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">public&nbsp;function&nbsp;</span><span style="color: #0000BB">doTaskWithProperty</span><span style="color: #007700">()&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">anyVariable</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}<br></span><span style="color: #0000BB">?&gt;</span>
+        </span>
+        </code>
+        Simple Class definition
+        <p><strong>$this</strong> is a  pseudo-variable and reference to the calling object (usually the object instantiated from the class)</p>
+    </article>
+    </section>
+    <section class="main-section" id="The_key_word_new">
+    <header>The key word new</header>
+    <p>
+      To create an instance of a class, the new keyword must be used. An object will always be created unless the object has a constructor defined that throws an exception on error. Classes should be defined before instantiation (and in some cases this is a requirement).
+    </p>
+    <code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br>$instance&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">DefinedClass</span><span style="color: #007700">();<br><br></span><span style="color: #FF8000">//&nbsp;This&nbsp;can&nbsp;also&nbsp;be&nbsp;done&nbsp;with&nbsp;a&nbsp;variable:<br></span><span style="color: #0000BB">$className&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'SampleClass'</span><span style="color: #007700">;<br></span><span style="color: #0000BB">$instance&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">$className</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;new&nbsp;SimpleClass()<br></span><span style="color: #0000BB">?&gt;</span>
+      </span>
+      </code>
+    </section>
+    <section class="main-section" id="Properties_and_methods">
+    <header>Properties and methods</header>
+    <article>    
+    <p>
+      Class properties and methods live in separate "namespaces", so it is possible to have a property and a method with the same name. Referring to both a property and a method has the same notation, and whether a property will be accessed or a method will be called, solely depends on the context, i.e. whether the usage is a variable access or a function call.
+    </p>
+    <code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">Foo<br></span><span style="color: #007700">{<br>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$bar&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'property'</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">bar</span><span style="color: #007700">()&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #DD0000">'method'</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}<br><br></span><span style="color: #0000BB">$obj&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Foo</span><span style="color: #007700">();<br>echo&nbsp;</span><span style="color: #0000BB">$obj</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bar</span><span style="color: #007700">;<br>echo&nbsp;</span><span style="color: #0000BB">$obj</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bar()</span><span style="color: #007700">;</span>
+      </span>
+      </code>
+      The above example will output:
+      <pre>
+        property
+        method
+      </pre>
+    </article>
+    </section>
+    <section class="main-section" id="Inheritance">
+    <header>Inheritance</header>
+    <article>
+    <p>
+      A class can inherit the methods and properties of another class by using the keyword <strong>extends</strong> in the class declaration. It is not possible to extend multiple classes; a class can only inherit from one base class.
+    </p>
+    <code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">ExtendClass&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">SimpleClass<br></span><span style="color: #007700">{<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Redefine&nbsp;the&nbsp;parent&nbsp;method<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">displayVar</span><span style="color: #007700">()<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Extending&nbsp;class\n"</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">parent</span><span style="color: #007700">::</span><span style="color: #0000BB">displayVar</span><span style="color: #007700">();<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}<br><br></span><span style="color: #0000BB">$extended&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">ExtendClass</span><span style="color: #007700">();<br></span><span style="color: #0000BB">$extended</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">displayVar</span><span style="color: #007700">();<br></span><span style="color: #0000BB">?&gt;</span>
+      </span>
+      </code>
+      <pre>
+        Extending class
+        a default value
+      </pre>
+    
+   
+    </article>
+    </section>
+    <section class="main-section" id="Namespaces">
+    <header>Namespaces</header>
+    <article>
+    <p>
+      What are namespaces? In the broadest definition namespaces are a way of encapsulating items. This can be seen as an abstract concept in many places. For example, in any operating system directories serve to group related files, and act as a namespace for the files within them. As a concrete example, the file foo.txt can exist in both directory /home/greg and in /home/other, but two copies of foo.txt cannot co-exist in the same directory. In addition, to access the foo.txt file outside of the /home/greg directory, we must prepend the directory name to the file name using the directory separator to get /home/greg/foo.txt. This same principle extends to namespaces in the programming world.
+    </p>
+    see file1.php and file2.php below
+    <code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br></span><span style="color: #007700">namespace&nbsp;</span><span style="color: #0000BB">Foo</span><span style="color: #007700">\</span><span style="color: #0000BB">Bar</span><span style="color: #007700">\</span><span style="color: #0000BB">subnamespace</span><span style="color: #007700">;<br><br>const&nbsp;</span><span style="color: #0000BB">FOO&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br>function&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">()&nbsp;{}<br>class&nbsp;</span><span style="color: #0000BB">foo<br></span><span style="color: #007700">{<br>&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;function&nbsp;</span><span style="color: #0000BB">staticmethod</span><span style="color: #007700">()&nbsp;{}<br>}<br></span><span style="color: #0000BB">?&gt;</span>
+      </span>
+      </code>
+      <code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br></span><span style="color: #007700">namespace&nbsp;</span><span style="color: #0000BB">Foo</span><span style="color: #007700">\</span><span style="color: #0000BB">Bar</span><span style="color: #007700">;<br>include&nbsp;</span><span style="color: #DD0000">'file1.php'</span><span style="color: #007700">;<br><br>const&nbsp;</span><span style="color: #0000BB">FOO&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">;<br>function&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">()&nbsp;{}<br>class&nbsp;</span><span style="color: #0000BB">foo<br></span><span style="color: #007700">{<br>&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;function&nbsp;</span><span style="color: #0000BB">staticmethod</span><span style="color: #007700">()&nbsp;{}<br>}<br><br></span><span style="color: #FF8000">/*&nbsp;Unqualified&nbsp;name&nbsp;*/<br></span><span style="color: #0000BB">foo</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;resolves&nbsp;to&nbsp;function&nbsp;Foo\Bar\foo<br></span><span style="color: #0000BB">foo</span><span style="color: #007700">::</span><span style="color: #0000BB">staticmethod</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;resolves&nbsp;to&nbsp;class&nbsp;Foo\Bar\foo,&nbsp;method&nbsp;staticmethod<br></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">FOO</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;resolves&nbsp;to&nbsp;constant&nbsp;Foo\Bar\FOO<br><br>/*&nbsp;Qualified&nbsp;name&nbsp;*/<br></span><span style="color: #0000BB">subnamespace</span><span style="color: #007700">\</span><span style="color: #0000BB">foo</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;resolves&nbsp;to&nbsp;function&nbsp;Foo\Bar\subnamespace\foo<br></span><span style="color: #0000BB">subnamespace</span><span style="color: #007700">\</span><span style="color: #0000BB">foo</span><span style="color: #007700">::</span><span style="color: #0000BB">staticmethod</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;resolves&nbsp;to&nbsp;class&nbsp;Foo\Bar\subnamespace\foo,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;method&nbsp;staticmethod<br></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">subnamespace</span><span style="color: #007700">\</span><span style="color: #0000BB">FOO</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;resolves&nbsp;to&nbsp;constant&nbsp;Foo\Bar\subnamespace\FOO<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>/*&nbsp;Fully&nbsp;qualified&nbsp;name&nbsp;*/<br></span><span style="color: #007700">\</span><span style="color: #0000BB">Foo</span><span style="color: #007700">\</span><span style="color: #0000BB">Bar</span><span style="color: #007700">\</span><span style="color: #0000BB">foo</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;resolves&nbsp;to&nbsp;function&nbsp;Foo\Bar\foo<br></span><span style="color: #007700">\</span><span style="color: #0000BB">Foo</span><span style="color: #007700">\</span><span style="color: #0000BB">Bar</span><span style="color: #007700">\</span><span style="color: #0000BB">foo</span><span style="color: #007700">::</span><span style="color: #0000BB">staticmethod</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;resolves&nbsp;to&nbsp;class&nbsp;Foo\Bar\foo,&nbsp;method&nbsp;staticmethod<br></span><span style="color: #007700">echo&nbsp;\</span><span style="color: #0000BB">Foo</span><span style="color: #007700">\</span><span style="color: #0000BB">Bar</span><span style="color: #007700">\</span><span style="color: #0000BB">FOO</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;resolves&nbsp;to&nbsp;constant&nbsp;Foo\Bar\FOO<br></span><span style="color: #0000BB">?&gt;</span>
+        </span>
+        </code>
+    </article>
+    </section>
+    <section class="main-section" id="Autoloading_Classes">
+    <header>Autoloading Classes</header>
+    <article>
+    <p>
+    Autoloading of classes allows developers to avoid using too many includes at the beginning of their script. The spl_autoload_register() function registers any number of autoloaders, enabling for classes and interfaces to be automatically loaded if they are currently not defined. By registering autoloaders, PHP is given a last chance to load the class or interface before it fails with an error.
+    </p>
+    <code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br>spl_autoload_register</span><span style="color: #007700">(function&nbsp;(</span><span style="color: #0000BB">$class_name</span><span style="color: #007700">)&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;include&nbsp;</span><span style="color: #0000BB">$class_name&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">'.php'</span><span style="color: #007700">;<br>});<br><br></span><span style="color: #0000BB">$obj&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MyClass1</span><span style="color: #007700">();<br></span><span style="color: #0000BB">$obj2&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MyClass2</span><span style="color: #007700">();&nbsp;<br></span><span style="color: #0000BB">?&gt;</span>
+      </span>
+      </code>
+      This example attempts to load the classes MyClass1 and MyClass2 from the files MyClass1.php and MyClass2.php respectively.
+    
+    
+    </article>
+    </section>
+    <section class="main-section" id="Constructors">
+    <header>Constructors </header>
+    <article>
+    <p>Classes which have a constructor method call this method on each newly-created object, so it is suitable for any initialization that the object may need before it is used.</p>
+    <p>
+      Parent constructors are not called implicitly if the child class defines a constructor. In order to run a parent constructor, a call to parent::__construct() within the child constructor is required. If the child does not define a constructor then it may be inherited from the parent class just like a normal class method (if it was not declared as private).
+    </p>
+    <code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">BaseClass&nbsp;</span><span style="color: #007700">{<br>&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">__construct</span><span style="color: #007700">()&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;</span><span style="color: #DD0000">"In&nbsp;BaseClass&nbsp;constructor\n"</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}<br><br>class&nbsp;</span><span style="color: #0000BB">SubClass&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">BaseClass&nbsp;</span><span style="color: #007700">{<br>&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">__construct</span><span style="color: #007700">()&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">parent</span><span style="color: #007700">::</span><span style="color: #0000BB">__construct</span><span style="color: #007700">();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;</span><span style="color: #DD0000">"In&nbsp;SubClass&nbsp;constructor\n"</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}<br><br>class&nbsp;</span><span style="color: #0000BB">OtherSubClass&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">BaseClass&nbsp;</span><span style="color: #007700">{<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;inherits&nbsp;BaseClass's&nbsp;constructor<br></span><span style="color: #007700">}<br><br></span><span style="color: #FF8000">//&nbsp;In&nbsp;BaseClass&nbsp;constructor<br></span><span style="color: #0000BB">$obj&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">BaseClass</span><span style="color: #007700">();<br><br></span><span style="color: #FF8000">//&nbsp;In&nbsp;BaseClass&nbsp;constructor<br>//&nbsp;In&nbsp;SubClass&nbsp;constructor<br></span><span style="color: #0000BB">$obj&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">SubClass</span><span style="color: #007700">();<br><br></span><span style="color: #FF8000">//&nbsp;In&nbsp;BaseClass&nbsp;constructor<br></span><span style="color: #0000BB">$obj&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">OtherSubClass</span><span style="color: #007700">();<br></span><span style="color: #0000BB">?&gt;</span>
+      </span>
+      </code>
+  
+    </article>
+    </section>
+    <section class="main-section" id="Visibility">
+    <header>Visibility</header>
+    <article>
+    <p>The visibility of a property, a method a constant can be defined by prefixing the declaration with the keywords public, protected or private. Class members declared public can be accessed everywhere. Members declared protected can be accessed only within the class itself and by inheriting and parent classes. Members declared as private may only be accessed by the class that defines the member.</p>
+    Class properties must be defined as public, private, or protected. If declared using var, the property will be defined as public.  
+    <code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br></span><span style="color: #FF8000">/**<br>&nbsp;*&nbsp;Define&nbsp;MyClass<br>&nbsp;*/<br></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">MyClass<br></span><span style="color: #007700">{<br>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$public&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'Public'</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;</span><span style="color: #0000BB">$protected&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'Protected'</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;</span><span style="color: #0000BB">$private&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'Private'</span><span style="color: #007700">;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">printHello</span><span style="color: #007700">()<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">public</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">protected</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">private</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}<br><br></span><span style="color: #0000BB">$obj&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MyClass</span><span style="color: #007700">();<br>echo&nbsp;</span><span style="color: #0000BB">$obj</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">public</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;Works<br></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$obj</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">protected</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;Fatal&nbsp;Error<br></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$obj</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">private</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;Fatal&nbsp;Error<br></span><span style="color: #0000BB">$obj</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">printHello</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;Shows&nbsp;Public,&nbsp;Protected&nbsp;and&nbsp;Private<br><br><br>/**<br>&nbsp;*&nbsp;Define&nbsp;MyClass2<br>&nbsp;*/<br></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">MyClass2&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">MyClass<br></span><span style="color: #007700">{<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;We&nbsp;can&nbsp;redeclare&nbsp;the&nbsp;public&nbsp;and&nbsp;protected&nbsp;properties,&nbsp;but&nbsp;not&nbsp;private<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">public&nbsp;</span><span style="color: #0000BB">$public&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'Public2'</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;</span><span style="color: #0000BB">$protected&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'Protected2'</span><span style="color: #007700">;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">printHello</span><span style="color: #007700">()<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">public</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">protected</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">private</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}<br><br></span><span style="color: #0000BB">$obj2&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MyClass2</span><span style="color: #007700">();<br>echo&nbsp;</span><span style="color: #0000BB">$obj2</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">public</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;Works<br></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$obj2</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">protected</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;Fatal&nbsp;Error<br></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$obj2</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">private</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;Undefined<br></span><span style="color: #0000BB">$obj2</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">printHello</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;Shows&nbsp;Public2,&nbsp;Protected2,&nbsp;Undefined<br><br></span><span style="color: #0000BB">?&gt;</span>
+      </span>
+      </code>
+      Class methods may be defined as public, private, or protected. Methods declared without any explicit visibility keyword are defined as public.
+      <code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br></span><span style="color: #FF8000">/**<br>&nbsp;*&nbsp;Define&nbsp;MyClass<br>&nbsp;*/<br></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">MyClass<br></span><span style="color: #007700">{<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Declare&nbsp;a&nbsp;public&nbsp;constructor<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">public&nbsp;function&nbsp;</span><span style="color: #0000BB">__construct</span><span style="color: #007700">()&nbsp;{&nbsp;}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Declare&nbsp;a&nbsp;public&nbsp;method<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">public&nbsp;function&nbsp;</span><span style="color: #0000BB">MyPublic</span><span style="color: #007700">()&nbsp;{&nbsp;}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Declare&nbsp;a&nbsp;protected&nbsp;method<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">protected&nbsp;function&nbsp;</span><span style="color: #0000BB">MyProtected</span><span style="color: #007700">()&nbsp;{&nbsp;}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Declare&nbsp;a&nbsp;private&nbsp;method<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">private&nbsp;function&nbsp;</span><span style="color: #0000BB">MyPrivate</span><span style="color: #007700">()&nbsp;{&nbsp;}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;This&nbsp;is&nbsp;public<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">Foo</span><span style="color: #007700">()<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">MyPublic</span><span style="color: #007700">();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">MyProtected</span><span style="color: #007700">();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">MyPrivate</span><span style="color: #007700">();<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}<br><br></span><span style="color: #0000BB">$myclass&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MyClass</span><span style="color: #007700">;<br></span><span style="color: #0000BB">$myclass</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">MyPublic</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;Works<br></span><span style="color: #0000BB">$myclass</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">MyProtected</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;Fatal&nbsp;Error<br></span><span style="color: #0000BB">$myclass</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">MyPrivate</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;Fatal&nbsp;Error<br></span><span style="color: #0000BB">$myclass</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">Foo</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;Public,&nbsp;Protected&nbsp;and&nbsp;Private&nbsp;work<br><br><br>/**<br>&nbsp;*&nbsp;Define&nbsp;MyClass2<br>&nbsp;*/<br></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">MyClass2&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">MyClass<br></span><span style="color: #007700">{<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;This&nbsp;is&nbsp;public<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">Foo2</span><span style="color: #007700">()<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">MyPublic</span><span style="color: #007700">();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">MyProtected</span><span style="color: #007700">();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">MyPrivate</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;Fatal&nbsp;Error<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">}<br>}<br><br></span><span style="color: #0000BB">$myclass2&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MyClass2</span><span style="color: #007700">;<br></span><span style="color: #0000BB">$myclass2</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">MyPublic</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;Works<br></span><span style="color: #0000BB">$myclass2</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">Foo2</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;Public&nbsp;and&nbsp;Protected&nbsp;work,&nbsp;not&nbsp;Private<br><br></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">Bar&nbsp;<br></span><span style="color: #007700">{<br>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">test</span><span style="color: #007700">()&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">testPrivate</span><span style="color: #007700">();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">testPublic</span><span style="color: #007700">();<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">testPublic</span><span style="color: #007700">()&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Bar::testPublic\n"</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;function&nbsp;</span><span style="color: #0000BB">testPrivate</span><span style="color: #007700">()&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Bar::testPrivate\n"</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}<br><br>class&nbsp;</span><span style="color: #0000BB">Foo&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">Bar&nbsp;<br></span><span style="color: #007700">{<br>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">testPublic</span><span style="color: #007700">()&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Foo::testPublic\n"</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;function&nbsp;</span><span style="color: #0000BB">testPrivate</span><span style="color: #007700">()&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Foo::testPrivate\n"</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}<br><br></span><span style="color: #0000BB">$myFoo&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Foo</span><span style="color: #007700">();<br></span><span style="color: #0000BB">$myFoo</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">test</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;Bar::testPrivate&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Foo::testPublic<br></span><span style="color: #0000BB">?&gt;</span>
+        </span>
+        </code>  
+    </article>
+    </section>
+    <section class="main-section" id="Object_inheritance">
+    <header>Object Inheritance</header>
+    <article>
+    
+    <p>
+      Inheritance is a well-established programming principle, and PHP makes use of this principle in its object model. This principle will affect the way many classes and objects relate to one another.
+
+      For example, when you extend a class, the subclass inherits all of the public and protected methods from the parent class. Unless a class overrides those methods, they will retain their original functionality.
+      
+      This is useful for defining and abstracting functionality, and permits the implementation of additional functionality in similar objects without the need to reimplement all of the shared functionality.
+    </p>
+    <code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br><br></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">Foo<br></span><span style="color: #007700">{<br>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">printItem</span><span style="color: #007700">(</span><span style="color: #0000BB">$string</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Foo:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$string&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">printPHP</span><span style="color: #007700">()<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'PHP&nbsp;is&nbsp;great.'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}<br><br>class&nbsp;</span><span style="color: #0000BB">Bar&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">Foo<br></span><span style="color: #007700">{<br>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">printItem</span><span style="color: #007700">(</span><span style="color: #0000BB">$string</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Bar:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$string&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}<br><br></span><span style="color: #0000BB">$foo&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Foo</span><span style="color: #007700">();<br></span><span style="color: #0000BB">$bar&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Bar</span><span style="color: #007700">();<br></span><span style="color: #0000BB">$foo</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">printItem</span><span style="color: #007700">(</span><span style="color: #DD0000">'baz'</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;Output:&nbsp;'Foo:&nbsp;baz'<br></span><span style="color: #0000BB">$foo</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">printPHP</span><span style="color: #007700">();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Output:&nbsp;'PHP&nbsp;is&nbsp;great'&nbsp;<br></span><span style="color: #0000BB">$bar</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">printItem</span><span style="color: #007700">(</span><span style="color: #DD0000">'baz'</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;Output:&nbsp;'Bar:&nbsp;baz'<br></span><span style="color: #0000BB">$bar</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">printPHP</span><span style="color: #007700">();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Output:&nbsp;'PHP&nbsp;is&nbsp;great'<br><br></span><span style="color: #0000BB">?&gt;</span>
+      </span>
+      </code>
+    </article>
+    </section>
+    
+    <section class="main-section" id="Reference">
+    <header>Reference</header>
+    <article>
+    <ul>
+    <li>
+    All the documentation in this page is taken from
+    <a href="https://www.php.net/" target="_blank">PHP MANUAL</a>
+    </li>
+    </ul>
+    </article>
+    </section>
+    </main>
+</body>
+</html>

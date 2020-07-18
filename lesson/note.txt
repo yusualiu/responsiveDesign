@@ -1,0 +1,158 @@
+https://www.freecodecamp.org/learn/responsive-web-design/basic-html-and-html5/link-to-external-pages-with-anchor-elements
+crank it up to eleven
+transform: scale(1.5);
+background: linear-gradient(
+      35deg,
+      #ccffff,
+      #ffcccc
+    );
+div:hover{
+    transform:scale(1.1);
+  }
+transform: skewX(24deg);
+
+
+<style>
+  div {
+    height: 40px;
+    width: 70%;
+    background: black;
+    margin: 50px auto;
+    border-radius: 5px;
+  }
+
+  #rect {
+    animation-name: rainbow;
+    animation-duration: 4s;
+ animation-fill-mode: forwards;
+    }
+  @keyframes rainbow{
+    0%{
+      background-color:blue;
+    }
+    50%{
+      background-color:green;
+    }
+  100%{
+      background-color:yellow;
+    }
+  }
+
+
+</style>
+<div id="rect"></div>
+
+
+<style>
+  div {
+    height: 40px;
+    width: 70%;
+    background: black;
+    margin: 50px auto;
+    border-radius: 5px;
+    position: relative;
+  }
+
+  #rect{
+    animation-name: rainbow;
+    animation-duration: 4s;
+    
+  }
+
+  @keyframes rainbow {
+    0% {
+      background-color: blue;
+      top: 0px;
+      left:0px;
+    }
+    50% {
+      background-color: green;
+      top: 50px;
+      left: 25px;
+
+    }
+    100% {
+      background-color: yellow;
+      top: 0px;
+      left:-25px;
+
+    }
+  }
+</style>
+
+<div id="rect"></div>
+
+<style>
+
+  #ball {
+    width: 70px;
+    height: 70px;
+    margin: 50px auto;
+    position: fixed;
+    left: 20%;
+    border-radius: 50%;
+    background: linear-gradient(
+      35deg,
+      #ccffff,
+      #ffcccc
+    );
+    animation-name: fade;
+    animation-duration: 3s;
+animation-iteration-count: infinite;
+animation-timing-function: cubic-bezier(0.25, 0.25, 0.75, 0.75);
+animation-timing-function: linear or ease-out,etc;
+  }
+
+  @keyframes fade {
+    50% {
+      left: 60%;
+      opacity:0.1;
+
+    }
+  }
+
+</style>
+
+<div id="ball"></div>
+
+One final point, each page should always have one (and only one) h1 element,
+which is the main subject of your content.
+
+<div> - groups content
+<section> - groups related content
+<article> - groups independent, self-contained content
+
+<body>
+  <header>
+    <h1>Training</h1>
+    <nav>
+      <ul>
+        <li><a href="#stealth">Stealth &amp; Agility</a></li>
+        <li><a href="#combat">Combat</a></li>
+        <li><a href="#weapons">Weapons</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="stealth">
+      <h2>Stealth &amp; Agility Training</h2>
+      <article><h3>Climb foliage quickly using a minimum spanning tree approach</h3></article>
+      <article><h3>No training is NP-complete without parkour</h3></article>
+    </section>
+    <section id="combat">
+      <h2>Combat Training</h2>
+      <article><h3>Dispatch multiple enemies with multithreaded tactics</h3></article>
+      <article><h3>Goodbye world: 5 proven ways to knock out an opponent</h3></article>
+    </section>
+    <section id="weapons">
+      <h2>Weapons Training</h2>
+      <article><h3>Swords: the best tool to literally divide and conquer</h3></article>
+      <article><h3>Breadth-first or depth-first in multi-weapon training?</h3></article>
+    </section>
+  </main>
+
+
+  <div>&copy; 2018 Camper Cat</div>
+
+
+</body>
